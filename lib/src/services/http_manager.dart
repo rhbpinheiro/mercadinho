@@ -21,8 +21,8 @@ class HttpManager {
       ..addAll({
         'content-type': 'application/json',
         'accept': 'application/json',
-        'X-Parse-Application-Id': 'edVVOWGtfQTwvY4mNOFfDudA7zOdafeRIesdYOeG',
-        'X-Parse-REST-API-Key': 'JGHH7NHB5pZgIXaoAfWSc7PDtVyRLRoJcF75iWNx'
+        'X-Parse-Application-Id': 'wK7GcEjr2V4br5q5mlR1kybQ5dvxMFDX0qtE1d6Y',
+        'X-Parse-REST-API-Key': '2kahi62fkWePLWAwC7k8aMrtQkobogcgkruMxbeB',
       });
 
     try {

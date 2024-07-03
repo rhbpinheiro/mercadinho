@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mercadinho/src/components/custom_text_field.dart';
 import 'package:mercadinho/src/pages/auth/controller/auth_controller.dart';
-import 'package:mercadinho/src/utils/validators.dart';
 import 'package:validatorless/validatorless.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -239,7 +238,6 @@ class _SignUpPageState extends State<SignUpPage> {
                                         if (_formKey.currentState!.validate()) {
                                           _formKey.currentState!.save();
                                           authcontroller.singUp();
-                                          print(authcontroller.user);
                                         }
                                       },
                                 child: authcontroller.isLoading.value

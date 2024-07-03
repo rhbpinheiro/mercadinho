@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mercadinho/src/components/custom_text_field.dart';
 import 'package:mercadinho/src/components/forgot_password_dialog.dart';
-import 'package:mercadinho/src/models/user_model.dart';
 import 'package:mercadinho/src/pages/auth/controller/auth_controller.dart';
 import 'package:mercadinho/src/pages/common_widgets/app_name_widget.dart';
 import 'package:mercadinho/src/pages_routes/app_pages.dart';

@@ -22,7 +22,7 @@ class AuthController extends GetxController {
     );
 
     if (token != null) {
-      Get.offAllNamed(PagesRoutes.sigInRoute);
+      Get.offAllNamed(PagesRoutes.baseRoute);
     } else {
       Get.offAllNamed(PagesRoutes.sigInRoute);
     }
@@ -49,7 +49,7 @@ class AuthController extends GetxController {
 
   void saveTokenProceedToHome() {
     utilsService.saveLocalData(StorageKeys.token, user.token!);
-    Get.offAllNamed(PagesRoutes.homeRoute);
+    Get.offAllNamed(PagesRoutes.baseRoute);
   }
 
   Future<void> signIn({

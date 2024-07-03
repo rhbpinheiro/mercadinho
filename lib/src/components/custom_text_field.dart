@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomTextField extends StatefulWidget {
-  CustomTextField({
+  // ignore: use_super_parameters
+  const CustomTextField({
     Key? key,
     required this.labelText,
     required this.prefix,

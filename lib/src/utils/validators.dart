@@ -1,5 +1,4 @@
-import 'package:get/get.dart';
-import 'package:validatorless/validatorless.dart';
+
 
 String? nameValidator(String? name) {
   if (name != null || name!.isEmpty) {

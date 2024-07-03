@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:mercadinho/src/components/pedido_tile.dart';
 import 'package:mercadinho/src/config/app_data.dart' as appData;
 
-class BodyPedidos extends StatefulWidget {
-  const BodyPedidos({super.key});
+class OedersTab extends StatefulWidget {
+  const OedersTab({super.key});
 
   @override
-  State<BodyPedidos> createState() => _BodyPedidosState();
+  State<OedersTab> createState() => _OedersTabState();
 }
 
 String selectedCategory = 'Frutas';
 
-class _BodyPedidosState extends State<BodyPedidos> {
+class _OedersTabState extends State<OedersTab> {
   TextEditingController emailController = TextEditingController();
   TextEditingController cpfController = TextEditingController();
   TextEditingController nomeController = TextEditingController();

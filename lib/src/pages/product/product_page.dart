@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:mercadinho/src/models/item_model.dart';
 
@@ -36,7 +37,7 @@ class _ProductPageState extends State<ProductPage> {
                   Expanded(
                     child: Hero(
                         tag: widget.item.imgUrl,
-                        child: Image.asset(widget.item.imgUrl)),
+                        child: Image.network(widget.item.imgUrl)),
                   ),
                   Expanded(
                     child: Container(
@@ -112,7 +113,11 @@ class _ProductPageState extends State<ProductPage> {
                                   ),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.back();
+                                // navigationController
+                                //     .navigatePageView(NavigationTabs.cart);
+                              },
                               icon: const Icon(
                                 Icons.shopping_cart_outlined,
                                 color: Colors.white,

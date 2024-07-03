@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:mercadinho/src/pages/bodyPages/body_cart.dart';
-import 'package:mercadinho/src/pages/bodyPages/body_home.dart';
-import 'package:mercadinho/src/pages/bodyPages/body_pedidos.dart';
-import 'package:mercadinho/src/pages/bodyPages/body_perfil.dart';
+import 'package:get/get.dart';
+import 'package:mercadinho/src/pages/cart/cart_tab.dart';
+import 'package:mercadinho/src/pages/home/view/home_tab.dart';
+import 'package:mercadinho/src/pages/orders/orders_tab.dart';
+import 'package:mercadinho/src/pages/profile/profile_tab.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class BaseScreen extends StatefulWidget {
+  const BaseScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<BaseScreen> createState() => _BaseScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _BaseScreenState extends State<BaseScreen> {
   int currentIndex = 0;
   final pageController = PageController();
+  // final navigationController = Get.find<NavigationController>();
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: const [
-          BodyHome(),
-          BodyCart(),
-          BodyPedidos(),
-          BodyPerfil(),
+          HomeTab(),
+          CartTab(),
+          OedersTab(),
+          ProfileTab(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

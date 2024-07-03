@@ -6,18 +6,18 @@ import 'package:mercadinho/src/config/app_data.dart' as appData;
 import 'package:mercadinho/src/models/item_carrinho.dart';
 import 'package:mercadinho/src/utils/utils_service.dart';
 
-class BodyCart extends StatefulWidget {
-  const BodyCart({super.key});
+class CartTab extends StatefulWidget {
+  const CartTab({super.key});
 
   @override
-  State<BodyCart> createState() => _BodyCartState();
+  State<CartTab> createState() => _CartTabState();
 }
 
 String selectedCategory = 'Frutas';
 
 final UtilsService utilsService = UtilsService();
 
-class _BodyCartState extends State<BodyCart> {
+class _CartTabState extends State<CartTab> {
   void removeCartItem(CartItemModel cartItem) {
     setState(() {
       appData.cartItems.remove(cartItem);

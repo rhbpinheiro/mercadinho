@@ -7,16 +7,16 @@ import 'package:mercadinho/src/components/custom_text_field.dart';
 import 'package:mercadinho/src/config/app_data.dart' as appData;
 import 'package:mercadinho/src/pages/auth/controller/auth_controller.dart';
 
-class BodyPerfil extends StatefulWidget {
-  const BodyPerfil({super.key});
+class ProfileTab extends StatefulWidget {
+  const ProfileTab({super.key});
 
   @override
-  State<BodyPerfil> createState() => _BodyPerfilState();
+  State<ProfileTab> createState() => _ProfileTabState();
 }
 
 String selectedCategory = 'Frutas';
 
-class _BodyPerfilState extends State<BodyPerfil> {
+class _ProfileTabState extends State<ProfileTab> {
   TextEditingController emailController = TextEditingController();
   TextEditingController cpfController = TextEditingController();
   TextEditingController nomeController = TextEditingController();
