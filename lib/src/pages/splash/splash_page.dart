@@ -1,21 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mercadinho/src/pages/auth/controller/auth_controller.dart';
+
 import 'package:mercadinho/src/pages/common_widgets/app_name_widget.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
-
-  @override
-  State<SplashPage> createState() => _SplashPageState();
-}
-
-class _SplashPageState extends State<SplashPage> {
-  @override
-  void initState() {
-    super.initState();
-    Get.find<AuthController>().validateToken();
-  }
 
   @override
   Widget build(BuildContext context) {

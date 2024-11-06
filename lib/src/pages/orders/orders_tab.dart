@@ -40,11 +40,12 @@ class _OedersTabState extends State<OedersTab> {
             );
           },
           itemBuilder: (_, index) {
-            return PedidoTile(
-              pedido: appData.pedidos[index],
-            );
+            return Container();
+            // return PedidoTile(
+            //   pedido: appData.pedidos[index],
+            // );
           },
-          itemCount: appData.pedidos.length,
+          itemCount: 0,
         ));
   }
 }

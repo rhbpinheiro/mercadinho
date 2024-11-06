@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:mercadinho/src/models/item_model.dart';
+import 'package:mercadinho/src/pages/base/controller/navigation_controller.dart';
 
 import '../common_widgets/widget_add_quantidade.dart';
 
@@ -21,6 +22,7 @@ class ProductPage extends StatefulWidget {
 
 class _ProductPageState extends State<ProductPage> {
   int quantityItem = 1;
+  final navigationController = Get.find<NavigationController>();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -115,8 +117,8 @@ class _ProductPageState extends State<ProductPage> {
                               ),
                               onPressed: () {
                                 Get.back();
-                                // navigationController
-                                //     .navigatePageView(NavigationTabs.cart);
+                                navigationController
+                                    .navigatePageView(NavigationTab.cart);
                               },
                               icon: const Icon(
                                 Icons.shopping_cart_outlined,

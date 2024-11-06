@@ -15,27 +15,30 @@ class AuthController extends GetxController {
 
   UserModel user = UserModel();
 
+  @override
+  void onInit() {
+    super.onInit();
+    validateToken();
+  }
+
   Future<void> validateToken() async {
     //recuperar token salvo
     String? token = await utilsService.getLocalData(
       StorageKeys.token,
     );
 
-    if (token != null) {
-      Get.offAllNamed(PagesRoutes.baseRoute);
-    } else {
+    if (token == null || token.isEmpty || token == 'null') {
       Get.offAllNamed(PagesRoutes.sigInRoute);
+      return;
     }
-    AuthResult result = await _authRepository.validateToken(token!);
+
+    AuthResult result = await _authRepository.validateToken(token);
+
     result.when(
-      success: (user) {
-        this.user = user;
-        saveTokenProceedToHome();
-      },
-      error: (message) {
-        singOut();
-      },
-    );
+        success: (user) => saveTokenProceedToHome(),
+        error: (message) {
+          singOut();
+        });
   }
 
   Future<void> singOut() async {
@@ -48,8 +51,10 @@ class AuthController extends GetxController {
   }
 
   void saveTokenProceedToHome() {
-    utilsService.saveLocalData(StorageKeys.token, user.token!);
-    Get.offAllNamed(PagesRoutes.baseRoute);
+    if (user.token != null) {
+      utilsService.saveLocalData(StorageKeys.token, user.token!);
+      Get.offAllNamed(PagesRoutes.baseRoute);
+    }
   }
 
   Future<void> signIn({

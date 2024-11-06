@@ -27,6 +27,15 @@ class AuthRepository {
       headers: {'X-Parse-Session-Token': token},
     );
 
+    if (result['result'] != null) {
+      final user = UserModel.fromJson(result['result']);
+      return AuthResult.success(user);
+    } else {
+      return AuthResult.error(
+        authErros.authErrorsString(result['error']),
+      );
+    }
+
     return handleUserOrError(result);
   }
 

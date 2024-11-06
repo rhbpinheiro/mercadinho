@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 abstract class HttpMethods {
   static const String post = 'POST';
@@ -21,8 +22,8 @@ class HttpManager {
       ..addAll({
         'content-type': 'application/json',
         'accept': 'application/json',
-        'X-Parse-Application-Id': 'wK7GcEjr2V4br5q5mlR1kybQ5dvxMFDX0qtE1d6Y',
-        'X-Parse-REST-API-Key': '2kahi62fkWePLWAwC7k8aMrtQkobogcgkruMxbeB',
+        'X-Parse-Application-Id': dotenv.env['PARSE_APPLICATION_ID'] ?? '',
+        'X-Parse-REST-API-Key': dotenv.env['PARSE_REST_API_KEY'] ?? '',
       });
 
     try {

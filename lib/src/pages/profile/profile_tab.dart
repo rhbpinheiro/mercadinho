@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mercadinho/src/components/custom_text_field.dart';
-
-import 'package:mercadinho/src/config/app_data.dart' as appData;
 import 'package:mercadinho/src/pages/auth/controller/auth_controller.dart';
 
 class ProfileTab extends StatefulWidget {
@@ -30,12 +28,12 @@ class _ProfileTabState extends State<ProfileTab> {
   @override
   void initState() {
     super.initState();
-    emailController.text = appData.user.email!;
-    cpfController.text = UtilBrasilFields.obterCpf(appData.user.cpf!);
+    emailController.text = authController.user.email!;
+    cpfController.text = UtilBrasilFields.obterCpf(authController.user.cpf!);
     telefoneController.text =
-        UtilBrasilFields.obterTelefone(appData.user.phone!);
-    nomeController.text = appData.user.name!;
-    senhaController.text = appData.user.password!;
+        UtilBrasilFields.obterTelefone(authController.user.phone!);
+    nomeController.text = authController.user.name!;
+    senhaController.text = authController.user.password!;
   }
 
   @override
